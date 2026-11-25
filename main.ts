@@ -18,6 +18,16 @@
 //     decision comes from the batches the harness delivers, so the two
 //     grading executions produce byte-identical action logs.
 //
+// Revision history, graded on the kit's dev window (--driver process):
+//   v1 (this file): net -0.94 SOL, 19.8% win rate, 562 round trips,
+//     562 distinct mints, max drawdown 9.5%, guardrails compliant.
+//   v2 (early snipe, 0.05 SOL, -10% stop, no take-profit): -2.39 SOL.
+//     Sniping the first trades buys into coins that dump straight away.
+//   v3 (v1 entry, half-sell at +15%, -12% stop): -1.18 SOL. The
+//     partial-profit shape did not beat v1. Reverted to v1, the best
+//     measured shape; the final window is unseen 6h data, so no further
+//     tuning against this one dev window.
+//
 // Prices are bonding-curve virtual reserves: price = virtual quote
 // reserves / virtual token reserves. All comparisons are bigint
 // cross-multiplications, so no floating point ever enters a decision.
